@@ -9,19 +9,19 @@ public class Produto
     [Key]
     public int ProdutoId { get; set; }
 
-    [Required]
-    [StringLength(80)]
+    [Required(ErrorMessage = "O nome é obrigatório")]
+    [StringLength(80), ]
     public string? Nome { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "A descrição é obrigatória")]
     [StringLength(300)]
     public string? Descricao { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "O preço é obrigatório")]
     [Column(TypeName = "decimal(10,2)")]
     public decimal Preco { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "A URL é obrigatória")]
     [StringLength(300)]
     public string? ImagemUrl { get; set; }
 
